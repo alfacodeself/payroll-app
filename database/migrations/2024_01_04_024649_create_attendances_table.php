@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
             $table->date('date');
-            $table->date('description');
+            $table->string('description');
             $table->enum('status', [
                 Status::OPENED->value,
                 Status::CLOSED->value,

@@ -32,6 +32,10 @@ class Employee extends Authenticatable
         $this->attributes['employee_number'] = Carbon::now()->format('Ymdhi');
     }
 
+    public function getPhotoAttribute($value)
+    {
+        return $value ? asset($value) : null;
+    }
     public static function getUsername()
     {
         return 'employee_number';

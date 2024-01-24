@@ -13,7 +13,7 @@ class Attendance extends Model
     protected $guarded = [];
     protected $casts = [
         'status' => Status::class,
-        'date' => 'date',
+        // 'date' => 'date',
         'close_at' => TimeCast::class,
     ];
     public function attendanceEmployees()

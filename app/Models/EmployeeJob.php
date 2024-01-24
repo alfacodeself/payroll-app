@@ -13,6 +13,12 @@ class EmployeeJob extends Model
     protected $casts = [
         'status' => Status::class,
     ];
+    public function scopeByCompany($query, $companyId)
+    {
+        return $query->with('job.departement.company')->whereHas('job.departement.company', function ($q) use ($companyId) {
+            $q->where('id', $companyId);
+        });
+    }
     public function attendanceEmployees()
     {
         return $this->hasMany(AttendanceEmployee::class);

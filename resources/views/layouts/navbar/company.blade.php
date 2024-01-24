@@ -13,7 +13,7 @@
         <a class="dropdown-item" href="{{ route('company.jobs.index', $company) }}">
             Jobs
         </a>
-        <a class="dropdown-item" href="">
+        <a class="dropdown-item" href="{{ route('company.employees.index', $company) }}">
             Employees
         </a>
     </div>
