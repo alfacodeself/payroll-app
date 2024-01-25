@@ -16,7 +16,16 @@ class AttendanceEmployee extends Model
         'paid_at' => 'date',
         'attendance_time' => TimeCast::class,
     ];
-
+    public function getProofAttribute($value)
+    {
+        return $value ? asset($value) : null;
+    }
+    public function showIncome() : int
+    {
+        $basePrice = $this->employeeJob->job->base_salary;
+        $qty = $this->job_qty;
+        return $basePrice * $qty;
+    }
     public function attendance()
     {
         return $this->belongsTo(Attendance::class);

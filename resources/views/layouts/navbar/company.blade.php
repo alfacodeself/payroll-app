@@ -19,7 +19,7 @@
     </div>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="">Attendances</a>
+    <a class="nav-link" href="{{ route('company.attendances.index', $company) }}">Attendances</a>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="">Payrolls</a>

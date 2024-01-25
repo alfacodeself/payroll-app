@@ -37,4 +37,8 @@ class Company extends Authenticatable
     {
         return $this->hasMany(Departement::class);
     }
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class);
+    }
 }

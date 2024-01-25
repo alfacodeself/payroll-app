@@ -14,13 +14,14 @@ return new class extends Migration
     {
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('company_id')->constrained('companies')->cascadeOnDelete();
             $table->date('date');
             $table->string('description');
             $table->enum('status', [
                 Status::OPENED->value,
                 Status::CLOSED->value,
             ]);
-            $table->time('close_at')->nullable();
+            $table->dateTime('close_at')->nullable();
             $table->timestamps();
         });
     }

@@ -9,6 +9,10 @@ use App\Enums\Status;
 
 class EmployeeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('company.auth');
+    }
     public function index(Company $company)
     {
         return view('companies.employees.index', [

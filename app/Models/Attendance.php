@@ -16,6 +16,10 @@ class Attendance extends Model
         // 'date' => 'date',
         'close_at' => TimeCast::class,
     ];
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
     public function attendanceEmployees()
     {
         return $this->hasMany(AttendanceEmployee::class);

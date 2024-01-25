@@ -12,6 +12,10 @@ class Payroll extends Model
     protected $casts = [
         'paid_at' => 'date',
     ];
+    public function getProofAttribute($value)
+    {
+        return $value ? asset($value) : null;
+    }
 
     public function employeeJob()
     {
