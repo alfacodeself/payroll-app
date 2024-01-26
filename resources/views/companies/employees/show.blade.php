@@ -13,7 +13,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="{{ $employee->photo }}" alt="photo">
+                                    <img src="{{ $employee->photo }}" alt="photo" class="img-fluid">
                                 </div>
                                 <div class="col-md-6">
                                     <div class="row">
