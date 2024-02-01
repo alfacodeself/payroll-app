@@ -101,15 +101,15 @@
                                             <tbody>
                                                 @forelse ($payrolls as $payroll)
                                                     <tr>
-                                                        <td>{{ $loop->itteration }}</td>
+                                                        <td>{{ $loop->iteration }}</td>
                                                         <td>{{ $payroll->description }}</td>
-                                                        <td>{{ $payroll->amount }}</td>
+                                                        <td>{{ 'Rp. ' . number_format($payroll->total_amount) }}</td>
                                                         <td>
                                                             <a href="{{ $payroll->proof }}" target="__blank">
                                                                 Link
                                                             </a>
                                                         </td>
-                                                        <td>{{ $employee->paid_at }}</td>
+                                                        <td>{{ $payroll->paid_at }}</td>
                                                         <td class="d-flex justify-content-arround">
                                                             <a class="btn btn-sm btn-info mx-1" href="">
                                                                 Detail

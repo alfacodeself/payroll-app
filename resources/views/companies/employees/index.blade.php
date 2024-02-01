@@ -77,7 +77,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="7" class="text-center">There's no employee</td>
+                                            <td colspan="8" class="text-center">There's no employee</td>
                                         </tr>
                                     @endforelse
                                 </tbody>

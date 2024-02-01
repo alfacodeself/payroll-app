@@ -42,7 +42,7 @@ class AttendanceController extends Controller
             return view('companies.attendances.show', [
                 'company' => $company->slug,
                 'att' => $attendance->id,
-                'attendances' => $attendance->attendanceEmployees->load('employeeJob.employee')
+                'attendances' => $attendance->attendanceEmployees->load('employeeJob')
             ]);
         } catch (\Throwable $th) {
             return back()->with('error', $th->getMessage());
@@ -85,6 +85,9 @@ class AttendanceController extends Controller
     {
         $request->validate(['qty' => 'required|integer|min:1']);
         try {
+            if ($attendanceEmployee->payment_status == Status::PAID) {
+                return back()->with('error', 'Attendance status is paid!');
+            }
             $attendanceEmployee->updateOrFail(['job_qty' => $request->qty]);
             return back()->with('success', 'Success change qty');
         } catch (\Throwable $th) {

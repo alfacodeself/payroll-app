@@ -16,8 +16,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('payroll_id')->constrained('payrolls')->cascadeOnDelete();
             $table->foreignId('attendance_employee_id')->nullable()->constrained('attendance_employees')->cascadeOnDelete();
-            $table->integer('base_salary');
-            $table->integer('qty_job');
+            $table->integer('base_price');
+            $table->integer('qty');
             $table->integer('total');
             $table->string('note');
             $table->enum('payroll_type', [

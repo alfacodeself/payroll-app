@@ -117,7 +117,7 @@ class JobController extends Controller
                 $this->fileService->remove($oldLogo);
             }
             // Upload logo
-            return $this->fileService->upload($logo, $name, 'public/img/company/job/image');
+            return $this->fileService->upload($logo, $name, 'public/img/company/job/');
         }
         // Kalau sebelumnya ada logo dan tidak ada request logo
         elseif ($oldLogo != null) {
